@@ -74,7 +74,7 @@ app.post('/blogs', async (req, res) => {
     } catch (err) {
         return res.status(500).json({ message: "Blog creation failed" });
     }
-})
+});
 
 app.put('/blogs/:id', async (req, res) => {
     let blogId = req.params.id;
@@ -98,7 +98,7 @@ app.put('/blogs/:id', async (req, res) => {
     } catch (err) {
         return res.status(500).json({ message: "Blog updation failed", err });
     }
-})
+});
 
 app.get('/blogs', async (req, res) => {
     try {
@@ -107,7 +107,7 @@ app.get('/blogs', async (req, res) => {
     } catch (err) {
         return res.status(500).json({ message: "Failed to fetch blogs" });
     }
-})
+});
 
 app.get('/blogs/:id', async (req, res) => {
     let blogId = req.params.id;
@@ -121,8 +121,7 @@ app.get('/blogs/:id', async (req, res) => {
     } catch (err) {
         return res.status(500).json({ message: "Failed to fetch blog" });
     }
-})
-
+});
 
 app.delete('/blogs/:id', async (req, res) => {
     let blogId = req.params.id;
@@ -156,7 +155,7 @@ app.post('/authors', async (req, res) => {
     } catch (err) {
         return res.status(500).json({ message: "Author creation failed" });
     }
-})
+});
 
 app.put('/authors/:id', async (req, res) => {
     let authorId = req.params.id;
@@ -179,7 +178,7 @@ app.put('/authors/:id', async (req, res) => {
     } catch (err) {
         return res.status(500).json({ message: "Author updation failed", err });
     }
-})
+});
 
 app.get('/authors', async (req, res) => {
     try {
@@ -203,8 +202,7 @@ app.get('/authors/:id', async (req, res) => {
     } catch (err) {
         return res.status(500).json({ message: "Failed to fetch author ", err });
     }
-})
-
+});
 
 app.delete('/authors/:id', async (req, res) => {
     let authorId = req.params.id;
@@ -219,10 +217,11 @@ app.delete('/authors/:id', async (req, res) => {
     } catch (err) {
         return res.status(500).json({ message: "Author deletion failed", err });
     }
-})
+});
+
 app.get('/', (req, res) => {
     res.status(200).json({ message: "ok" });
-})
+});
 
 app.post('/users', (req, res) => {
     console.log("--------", req.body);
@@ -258,7 +257,7 @@ app.post('/comments', (req, res) => {
         }
         res.status(200).json({ message: "comment inserted successfully" });
     });
-})
+});
 
 app.get('/users', (req, res) => {
     User.find({ "name": "imran" })
@@ -307,7 +306,7 @@ app.get('/stories', (req, res) => {
             // prints "The author is Ian Fleming"
             res.status(200).json({ data: story });
         });
-})
+});
 
 // app.get('/authors', (req, res) => {
 //     Person.
